@@ -1,0 +1,18 @@
+{
+    "builds": [
+        {
+            "src": "postscribers/wsgi.py",
+            "use": "@vercel/python",
+            "config": {
+                "maxLambdaSize": "15mb",
+                "runtime": "Python 3.13.0"
+            }
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "postscribers/wsgi.py"
+        }
+    ]
+}
